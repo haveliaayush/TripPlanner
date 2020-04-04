@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Trip Planner</string>
+    <string name="title_home">Home</string>
+    <string name="title_todo">To Do List</string>
+    <string name="title_book">Book</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_expense">Expense Manager</string>
+</resources>
