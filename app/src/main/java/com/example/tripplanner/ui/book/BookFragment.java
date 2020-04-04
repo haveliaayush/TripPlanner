@@ -4,32 +4,70 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
+import androidx.viewpager.widget.ViewPager;
 
 import com.example.tripplanner.R;
+import com.example.tripplanner.adapter.SectionPagerAdapter;
+import com.example.tripplanner.ui.flight.FlightFragment;
+import com.example.tripplanner.ui.hotel.HotelFragment;
+import com.google.android.material.tabs.TabLayout;
 
 public class BookFragment extends Fragment {
 
-    private BookViewModel bookViewModel;
+    ViewPager viewPager;
+    View myFragment;
+    TabLayout tabLayout;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        bookViewModel =
-                ViewModelProviders.of(this).get(BookViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_book, container, false);
-        final TextView textView = root.findViewById(R.id.text_book);
-        bookViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setRetainInstance(true);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        myFragment = inflater.inflate(R.layout.fragment_book, container, false);
+
+        viewPager = myFragment.findViewById(R.id.viewPager);
+        tabLayout = myFragment.findViewById(R.id.tabLayout);
+
+        return myFragment;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        setUpViewPager(viewPager);
+        tabLayout.setupWithViewPager(viewPager);
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
+            public void onTabSelected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
             }
         });
-        return root;
+    }
+
+    private void setUpViewPager(ViewPager viewPager) {
+        SectionPagerAdapter adapter = new SectionPagerAdapter(getChildFragmentManager());
+
+        adapter.addFragment(new FlightFragment(), "Flights");
+        adapter.addFragment(new HotelFragment(), "Hotels");
+
+        viewPager.setAdapter(adapter);
     }
 }
