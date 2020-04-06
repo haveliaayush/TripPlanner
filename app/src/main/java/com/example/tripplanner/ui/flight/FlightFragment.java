@@ -27,7 +27,7 @@ public class FlightFragment extends Fragment {
 
     EditText sel_dot;
     TextView sel_nop;
-    ImageButton btn_min,bnt_add;
+    ImageButton btn_min,btn_add;
     Button search;
     AutoCompleteTextView src_apt,dst_apt;
 
@@ -40,7 +40,7 @@ public class FlightFragment extends Fragment {
 
         sel_dot = root.findViewById(R.id.sel_dot);
         sel_nop = root.findViewById(R.id.sel_nop);
-        bnt_add = root.findViewById(R.id.btn_plus);
+        btn_add = root.findViewById(R.id.btn_plus);
         btn_min = root.findViewById(R.id.btn_minus);
         search = root.findViewById(R.id.search);
         src_apt = root.findViewById(R.id.src_apt);
@@ -68,7 +68,7 @@ public class FlightFragment extends Fragment {
             }
         });
 
-        bnt_add.setOnClickListener(new View.OnClickListener() {
+        btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sel_nop.setText(String.valueOf(Integer.parseInt(sel_nop.getText().toString())+1));

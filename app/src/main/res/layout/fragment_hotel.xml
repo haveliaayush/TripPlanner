@@ -6,17 +6,197 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
-    <TextView
-        android:id="@+id/text_hotel"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/search"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="40dp"
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/chewy"
+        android:text="@string/search"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nor" />
+
+    <EditText
+        android:id="@+id/sel_doci"
+        android:layout_width="231dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginEnd="10dp"
+        android:ems="10"
+        android:fontFamily="@font/chewy"
+        android:hint="Select Date"
+        android:inputType="date"
+        android:textSize="28sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ci_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/ci_tv" />
+
+    <EditText
+        android:id="@+id/sel_doco"
+        android:layout_width="231dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="10dp"
+        android:ems="10"
+        android:fontFamily="@font/chewy"
+        android:hint="Select Date"
+        android:inputType="date"
+        android:textSize="28sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/co_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.148"
+        app:layout_constraintStart_toEndOf="@+id/co_tv" />
+
+    <TextView
+        android:id="@+id/city_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/chewy"
+        android:text="@string/city"
+        android:textSize="28sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ci_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="35dp"
+        android:fontFamily="@font/chewy"
+        android:text="Check In"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/city_tv" />
+
+    <TextView
+        android:id="@+id/co_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="35dp"
+        android:fontFamily="@font/chewy"
+        android:text="Check Out"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ci_tv" />
+
+    <AutoCompleteTextView
+        android:id="@+id/city"
+        android:layout_width="228dp"
+        android:layout_height="56dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/chewy"
+        android:hint="@string/search"
+        android:shadowRadius="5"
+        android:textSize="28sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/city_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.768"
+        app:layout_constraintStart_toEndOf="@+id/city_tv" />
+
+    <TextView
+        android:id="@+id/nop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="35dp"
+        android:fontFamily="@font/chewy"
+        android:text="No. of Guests"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/co_tv" />
+
+    <TextView
+        android:id="@+id/nor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="35dp"
+        android:fontFamily="@font/chewy"
+        android:text="No. of Rooms"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nop" />
+
+    <ImageButton
+        android:id="@+id/btn_minus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="35dp"
+        android:src="@drawable/ic_minus"
+        app:layout_constraintBottom_toBottomOf="@+id/nop"
+        app:layout_constraintStart_toEndOf="@+id/nop"
+        app:layout_constraintTop_toBottomOf="@+id/sel_dot" />
+
+    <ImageButton
+        android:id="@+id/btn_minus_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="51dp"
+        android:layout_marginTop="35dp"
+        android:src="@drawable/ic_minus"
+        app:layout_constraintBottom_toBottomOf="@+id/nor"
+        app:layout_constraintStart_toEndOf="@+id/nor"
+        app:layout_constraintTop_toBottomOf="@+id/btn_minus"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/sel_nog"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/chewy"
+        android:text="1"
+        android:textAlignment="center"
+        android:textSize="28sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/nop"
+        app:layout_constraintEnd_toStartOf="@+id/btn_plus"
+        app:layout_constraintStart_toEndOf="@+id/btn_minus" />
+
+    <TextView
+        android:id="@+id/sel_nor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/chewy"
+        android:text="1"
+        android:textAlignment="center"
+        android:textSize="28sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/nor"
+        app:layout_constraintEnd_toStartOf="@+id/btn_plus_2"
+        app:layout_constraintStart_toEndOf="@+id/btn_minus_2"
+        android:layout_marginStart="10dp"
+        android:layout_margin="10dp"/>
+
+    <ImageButton
+        android:id="@+id/btn_plus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="30dp"
+        android:src="@drawable/ic_add"
+        app:layout_constraintBottom_toBottomOf="@+id/nop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sel_dot"/>
+
+    <ImageButton
+        android:id="@+id/btn_plus_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="30dp"
+        android:src="@drawable/ic_add"
+        app:layout_constraintBottom_toBottomOf="@+id/nor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_plus" />
 </androidx.constraintlayout.widget.ConstraintLayout>
