@@ -5,4 +5,9 @@
     <string name="title_book">Book</string>
     <string name="title_profile">Profile</string>
     <string name="title_expense">Expense Manager</string>
+    <string name="source">Source</string>
+    <string name="destination">Destination</string>
+    <string name="dot">Date of Travel</string>
+    <string name="nop">No. of Passengers</string>
+    <string name="search">Search</string>
 </resources>

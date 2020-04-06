@@ -7,16 +7,140 @@
     tools:context=".ui.flight.FlightFragment">
 
     <TextView
-        android:id="@+id/text_flight"
-        android:layout_width="match_parent"
+        android:id="@+id/src_tv"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/chewy"
+        android:text="@string/source"
+        android:textSize="28sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <AutoCompleteTextView
+        android:id="@+id/src_apt"
+        android:layout_width="228dp"
+        android:layout_height="56dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/chewy"
+        android:shadowRadius="5"
+        android:textSize="28sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/src_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.768"
+        app:layout_constraintStart_toEndOf="@+id/src_tv" />
+
+    <TextView
+        android:id="@+id/dst_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/chewy"
+        android:text="@string/destination"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/src_tv" />
+
+    <AutoCompleteTextView
+        android:id="@+id/dst_apt"
+        android:layout_width="228dp"
+        android:layout_height="56dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/chewy"
+        android:textSize="28sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/dst_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dst_tv" />
+
+    <TextView
+        android:id="@+id/dot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/chewy"
+        android:text="@string/dot"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dst_tv" />
+
+
+    <EditText
+        android:id="@+id/sel_dot"
+        android:layout_width="192dp"
+        android:layout_height="53dp"
+        android:layout_marginEnd="10dp"
+        android:ems="10"
+        android:fontFamily="@font/chewy"
+        android:inputType="date"
+        android:textSize="28sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/dot"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dot" />
+
+    <TextView
+        android:id="@+id/nop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/chewy"
+        android:text="@string/nop"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dot" />
+
+    <ImageButton
+        android:id="@+id/btn_minus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/ic_minus"
+        app:layout_constraintBottom_toBottomOf="@+id/nop"
+        app:layout_constraintStart_toEndOf="@+id/nop"
+        app:layout_constraintTop_toBottomOf="@+id/sel_dot" />
+
+    <TextView
+        android:id="@+id/sel_nop"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/chewy"
+        android:text="1"
+        android:textAlignment="center"
+        android:textSize="28sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/nop"
+        app:layout_constraintEnd_toStartOf="@+id/btn_plus"
+        app:layout_constraintStart_toEndOf="@+id/btn_minus" />
+
+    <ImageButton
+        android:id="@+id/btn_plus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="30dp"
+        android:src="@drawable/ic_add"
+        app:layout_constraintBottom_toBottomOf="@+id/nop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sel_dot" />
+
+    <Button
+        android:id="@+id/search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/search"
+        android:textSize="24sp"
+        android:fontFamily="@font/chewy"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nop" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

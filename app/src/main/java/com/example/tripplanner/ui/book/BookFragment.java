@@ -18,7 +18,7 @@ import com.google.android.material.tabs.TabLayout;
 public class BookFragment extends Fragment {
 
     ViewPager viewPager;
-    View myFragment;
+    View root;
     TabLayout tabLayout;
 
     @Override
@@ -30,12 +30,12 @@ public class BookFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        myFragment = inflater.inflate(R.layout.fragment_book, container, false);
+        root = inflater.inflate(R.layout.fragment_book, container, false);
 
-        viewPager = myFragment.findViewById(R.id.viewPager);
-        tabLayout = myFragment.findViewById(R.id.tabLayout);
+        viewPager = root.findViewById(R.id.viewPager);
+        tabLayout = root.findViewById(R.id.tabLayout);
 
-        return myFragment;
+        return root;
     }
 
     @Override
