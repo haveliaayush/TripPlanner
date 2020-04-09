@@ -64,6 +64,7 @@ public class HotelFragment extends Fragment {
                                 }
                             });
                     AlertDialog alertDialog = alBuilder.create();
+                    alertDialog.setCanceledOnTouchOutside(false);
                     alertDialog.show();
                 }
                 else
@@ -84,6 +85,7 @@ public class HotelFragment extends Fragment {
                                 }
                             });
                     AlertDialog alertDialog = alBuilder.create();
+                    alertDialog.setCanceledOnTouchOutside(false);
                     alertDialog.show();
                 }
                 else

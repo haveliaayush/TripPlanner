@@ -61,6 +61,7 @@ public class FlightFragment extends Fragment {
                                 }
                             });
                     AlertDialog alertDialog = alBuilder.create();
+                    alertDialog.setCanceledOnTouchOutside(false);
                     alertDialog.show();
                 }
                 else
